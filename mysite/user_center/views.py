@@ -1,5 +1,6 @@
 #coding=utf8
-from django.shortcuts import render
+from django.shortcuts import render ,redirect
+from django.core.urlresolvers import reverse
 from django.http import HttpResponse
 from models import *
 from user_info.models import *
@@ -47,6 +48,6 @@ def getAddressInfo(request):
 
         meter.save()
 
-        return HttpResponse('ok')
+        return redirect(reverse(''))
     else:
         return HttpResponse('error')
