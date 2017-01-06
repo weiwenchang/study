@@ -2,7 +2,7 @@ from django.db import models
 
 class user_info1(models.Model):
     uname = models.CharField(max_length=20)
-    upwd = models.CharField(max_length=16)
+    upwd = models.CharField(max_length=40)
     ugender = models.BooleanField()
     ueamil = models.CharField(max_length=20)
     utell = models.CharField(max_length=11)
