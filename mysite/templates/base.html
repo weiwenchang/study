@@ -8,16 +8,27 @@
 	<script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
 	<script type="text/javascript" src="/static/js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="/static/js/slide.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var uname=$('#session').val()
+            if (uname !== None){
+                $("#em").html(uname);
+                $('#session1').show();
+                $('#session2').hide();
+            }
+        })
+    </script>
 </head>
 <body>
+    <input id ='session' type="hidden" value="{{ name }}" />
     <div class="header_con">
     <div class="header">
         <div class="welcome fl">欢迎来到天天生鲜!</div>
         <div class="fr">
-            <div class="login_info fl">
-                欢迎您：<em>张 山</em>
+            <div class="login_info fl" id ='session1'>
+                欢迎您：<em id ='em'>张 山</em>
             </div>
-            <div class="login_btn fl">
+            <div class="login_btn fl" id ='session2'>
                 <a href="login.html">登录</a>
                 <span>|</span>
                 <a href="register.html">注册</a>

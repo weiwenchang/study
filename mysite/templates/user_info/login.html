@@ -5,8 +5,24 @@
 	<title>天天生鲜-登录</title>
 	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+	<script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="/static/js/login.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            msg=$('#msg').val()
+            if(msg=='用户名不存在'){
+                $('#username').next().html('用户名不存在');
+                $('#username').next().show();
+            }else if(msg=='密码不正确'){
+                $('#username').next().html('密码不正确');
+                $('#username').next().show();
+            }
+        })
+
+    </script>
 </head>
 <body>
+<input id="msg" type="hidden" value="{{ msg }}" />
     <div class="login_top clearfix">
 		<a href="index.html" class="login_logo"><img src="/static/imgs/logo02.png"></a>
 	</div>
@@ -21,17 +37,17 @@
 					<a href="/user_info/register">立即注册</a>
 				</div>
 				<div class="form_input">
-					<form>
-						<input type="text" name="username" class="name_input" placeholder="请输入用户名">
+					<form action="/user_info/loginHand/" id="input_info" method="post">
+						<input type="text" name="username" class="name_input" placeholder="请输入用户名" id="username">
 						<div class="user_error">输入错误</div>
-						<input type="password" name="pwd" class="pass_input" placeholder="请输入密码">
+						<input type="password" name="pwd" class="pass_input" placeholder="请输入密码" id="userpwd">
 						<div class="pwd_error">输入错误</div>
 						<div class="more_input clearfix">
-							<input type="checkbox" name="">
+							<input type="checkbox" name="check"  id="allow" value="1">
 							<label>记住用户名</label>
 							<a href="#">忘记密码</a>
 						</div>
-						<input type="submit" name="" value="登录" class="input_submit">
+						<input type="submit" name="" value="登录" class="input_submit" >
 					</form>
 				</div>
 			</div>
