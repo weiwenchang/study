@@ -19,8 +19,13 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     # url(r'^',include('index.urls')),
+<<<<<<< HEAD
     # url(r'^user_center/$',include('user_center.urls')),
     url(r'^user_info/',include('user_info.urls',namespace='user_info')),
+=======
+     url(r'^user_center/',include('user_center.urls')),
+    #url(r'^user_info/',include('user_info.urls')),
+>>>>>>> 1dcac70b7dae123f175e37a275cb8541eeaa5d57
     # url(r'^user_order/$',include('user_order.urls')),
     # url(r'^goods_list/$',include('goods_list.urls')),
 ]
