@@ -11,7 +11,11 @@
     <script type="text/javascript">
         $(function () {
             var uname=$('#session').val()
-            if (uname !== None){
+            alert(uname);
+            if (uname == 'None'){
+
+            }
+            else {
                 $("#em").html(uname);
                 $('#session1').show();
                 $('#session2').hide();
@@ -20,7 +24,7 @@
     </script>
 </head>
 <body>
-    <input id ='session' type="hidden" value="{{ name }}" />
+    <input id ='session' type="hidden" value="{{ uname }}" />
     <div class="header_con">
     <div class="header">
         <div class="welcome fl">欢迎来到天天生鲜!</div>
